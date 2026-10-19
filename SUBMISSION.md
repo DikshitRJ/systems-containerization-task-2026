@@ -7,16 +7,25 @@
 ---
 
 ## Table of Contents
-1. [Reproduction Instructions](#1-reproduction-instructions)
-2. [Phase 1: End-to-End Build and Verification](#2-phase-1-end-to-end-build-and-verification)
-3. [Phase 2: Frontend Image Optimization](#3-phase-2-frontend-image-optimization)
-4. [Phase 3: Database Configuration and Volume Persistence](#4-phase-3-database-configuration-and-volume-persistence)
-5. [Phase 4: Network Segmentation and Isolation](#5-phase-4-network-segmentation-and-isolation)
-6. [Phase 5: Nginx SSL Termination and HTTPS Redirection](#6-phase-5-nginx-ssl-termination-and-https-redirection)
-7. [Phase 6: Consolidated Orchestration and Build Cache Analysis](#7-phase-6-consolidated-orchestration-and-build-cache-analysis)
-8. [Phase 7: Bonus — Scaling, Load Balancing, and Rate Limiting](#8-phase-7-bonus--scaling-load-balancing-and-rate-limiting)
-9. [Phase 8: Bonus — Container Hardening and CI Pipeline](#9-phase-8-bonus--container-hardening-and-ci-pipeline)
-10. [Summary of Changes](#10-summary-of-changes)
+- [Systems Containerization Task 2026 - Final Submission](#systems-containerization-task-2026---final-submission)
+  - [Table of Contents](#table-of-contents)
+  - [1. Reproduction Instructions](#1-reproduction-instructions)
+    - [Step 1: Clone Repository and Navigate to Workspace](#step-1-clone-repository-and-navigate-to-workspace)
+    - [Step 2: Configure Environment Variables](#step-2-configure-environment-variables)
+    - [Step 3: Generate SSL Certificates](#step-3-generate-ssl-certificates)
+    - [Step 4: Build and Start Containers](#step-4-build-and-start-containers)
+    - [Step 5: Verify Running Services](#step-5-verify-running-services)
+    - [Step 6: Access the Application](#step-6-access-the-application)
+  - [2. Phase 1: End-to-End Build and Verification](#2-phase-1-end-to-end-build-and-verification)
+    - [Key Issues Identified \& Resolved:](#key-issues-identified--resolved)
+  - [3. Phase 2: Frontend Image Optimization](#3-phase-2-frontend-image-optimization)
+  - [4. Phase 3: Database Configuration and Volume Persistence](#4-phase-3-database-configuration-and-volume-persistence)
+  - [5. Phase 4: Network Segmentation and Isolation](#5-phase-4-network-segmentation-and-isolation)
+  - [6. Phase 5: Nginx SSL Termination and HTTPS Redirection](#6-phase-5-nginx-ssl-termination-and-https-redirection)
+  - [7. Phase 6: Consolidated Orchestration and Build Cache Analysis](#7-phase-6-consolidated-orchestration-and-build-cache-analysis)
+  - [8. Phase 7: Bonus — Scaling, Load Balancing, and Rate Limiting](#8-phase-7-bonus--scaling-load-balancing-and-rate-limiting)
+  - [9. Phase 8: Bonus — Container Hardening and CI Pipeline](#9-phase-8-bonus--container-hardening-and-ci-pipeline)
+  - [10. Summary of Changes](#10-summary-of-changes)
 
 ---
 
@@ -26,7 +35,7 @@ To start the entire multi-container application stack from a clean state:
 
 ### Step 1: Clone Repository and Navigate to Workspace
 ```bash
-git clone https://github.com/WebClub-NITK/systems-containerization-task-2026.git
+git clone https://github.com/dikshitrj/systems-containerization-task-2026.git
 cd systems-containerization-task-2026
 ```
 
