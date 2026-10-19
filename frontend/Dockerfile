@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY . .
 RUN npm install
+ENV VITE_API_URL=""
 RUN npm run build
 
 EXPOSE 80
