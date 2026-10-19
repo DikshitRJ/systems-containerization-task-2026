@@ -3,16 +3,16 @@ services:
     image: postgres:15-alpine
     container_name: orbis-db
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgrespassword
-      POSTGRES_DB: orbis
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgrespassword}
+      POSTGRES_DB: ${POSTGRES_DB:-orbis}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - backend-network
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d orbis"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-orbis}"]
       interval: 2s
       timeout: 3s
       retries: 5
@@ -23,8 +23,8 @@ services:
       dockerfile: Dockerfile
     container_name: orbis-backend
     environment:
-      PORT: 4000
-      DATABASE_URL: postgresql://postgres:postgrespassword@database:5432/orbis?schema=public
+      PORT: ${PORT:-4000}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgrespassword}@database:5432/${POSTGRES_DB:-orbis}?schema=public
       AUTH0_ISSUER_BASE_URL: https://dev-dummy.auth0.com/
       AUTH0_AUDIENCE: https://api.orbis.com
     depends_on:
