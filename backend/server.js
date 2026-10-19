@@ -14,6 +14,7 @@ import projectRoutes from './src/routes/projects.js';
 import profileRoutes from './src/routes/profiles.js';
 
 const app = express();
+// Cache test modification: Phase 6 layer cache analysis
 const PORT = process.env.PORT || 4000;
 
 // Middleware

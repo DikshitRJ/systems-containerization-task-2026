@@ -24,9 +24,10 @@ services:
     container_name: orbis-backend
     environment:
       PORT: ${PORT:-4000}
-      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgrespassword}@database:5432/${POSTGRES_DB:-orbis}?schema=public
-      AUTH0_ISSUER_BASE_URL: https://dev-dummy.auth0.com/
-      AUTH0_AUDIENCE: https://api.orbis.com
+      DATABASE_URL: ${DATABASE_URL:-postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgrespassword}@database:5432/${POSTGRES_DB:-orbis}?schema=public}
+      AUTH0_ISSUER_BASE_URL: ${AUTH0_ISSUER_BASE_URL:-https://dev-dummy.auth0.com/}
+      AUTH0_AUDIENCE: ${AUTH0_AUDIENCE:-https://api.orbis.com}
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:3000}
     depends_on:
       database:
         condition: service_healthy
