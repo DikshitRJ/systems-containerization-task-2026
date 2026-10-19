@@ -21,7 +21,6 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: orbis-backend
     environment:
       PORT: ${PORT:-4000}
       DATABASE_URL: ${DATABASE_URL:-postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgrespassword}@database:5432/${POSTGRES_DB:-orbis}?schema=public}
